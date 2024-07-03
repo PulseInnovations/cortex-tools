@@ -2,16 +2,15 @@
 name: goreleaser
 
 on:
-  pull_request:
   push:
-    # run only against tags
-    tags:
-      - "*"
+    branches: [ pulse ]
+  pull_request:
+    branches: [ pulse ]
 
 permissions:
   contents: write
-  # packages: write
-  # issues: write
+  packages: write
+  issues: write
 
 jobs:
   goreleaser:
