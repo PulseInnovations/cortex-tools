@@ -6,15 +6,6 @@ on:
   pull_request:
     branches: [ pulse ]
 
-# workflow name
-name: Generate release-artifacts
-
-# on events
-on:
-  release:
-    types: 
-        - created
-
 jobs:
   generate:
     name: Generate cross-platform builds
