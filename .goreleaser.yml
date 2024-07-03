@@ -81,18 +81,13 @@ archives:
       {{- .ProjectName }}_
       {{- .Tag }}_
       {{- title .Os }}_
-      {{- if eq .Arch "amd64" }}x86_64
-      {{- else if eq .Arch "386" }}i386
-      {{- else if eq .Arch "darwin" }}macos
-      {{- else }}{{ .Arch }}{{ end }}
-      {{- if .Arm }}v{{ .Arm }}{{ end -}}
+      {{ .Arch }}
     files:
       - none*
     format: binary
   - id: needed-for-homebrew
     builds:
       - cortextool-linux
-    format: 'tar.gz'
 checksum:
   name_template: 'checksums.txt'
 snapshot:
